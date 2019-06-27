@@ -51,7 +51,7 @@ namespace strange.examples.strangerocks.ui
 		{
 			if (livesGOs == null)
 			{
-				GameObject proto = livesBlock.transform.FindChild ("ship").gameObject;
+				GameObject proto = livesBlock.transform.Find ("ship").gameObject;
 				livesGOs = new GameObject[9];
 				livesGOs [0] = proto;
 				for (int a = 1; a < 9; a++)
@@ -59,7 +59,7 @@ namespace strange.examples.strangerocks.ui
 					GameObject go = GameObject.Instantiate (proto) as GameObject;
 					go.transform.parent = proto.transform.parent;
 					Vector3 pos = proto.transform.localPosition;
-					pos.x = pos.x - (go.renderer.bounds.size.x * a);
+					pos.x = pos.x - (go.GetComponent<Renderer>().bounds.size.x * a);
 					go.transform.localPosition = pos;
 					livesGOs [a] = go;
 				}

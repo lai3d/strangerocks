@@ -68,7 +68,7 @@ namespace strange.examples.strangerocks.ui
 
 			//If we're on desktop/editor/web...
 			//We'll destroy the touchscreen controls
-			Transform transform = (contextView as GameObject).transform.FindChild("onscreen_controls");
+			Transform transform = (contextView as GameObject).transform.Find("onscreen_controls");
 			if (transform != null)
 			{
 				GameObject.Destroy(transform.gameObject);
